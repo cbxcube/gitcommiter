@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #
 
-reprotfile="collectstat.csv"
-archivefile=$(date)${reportfile}
+reportfile="collectstat.csv"
+#archivefile=$(date)${reportfile}
 
 
 function populate_data {
@@ -11,7 +11,7 @@ function populate_data {
 	df -h / >> $reportfile
 	df -h /data >> $reportfile
 	echo "data colection completed"
-	mv $reportfile $(date)$reportfile
+	mv $reportfile $(date|awk '{print $5}')$reportfile
 	echo "file renamed"
 }
 
