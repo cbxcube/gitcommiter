@@ -11,7 +11,7 @@ function populate_data {
 	df -h / >> $reportfile
 	df -h /data >> $reportfile
 	echo "data colection completed"
-	mv $reportfile $(date|awk '{print $5}')$reportfile
+	mv $reportfile $(date|awk '{print $4}')$reportfile
 	echo "file renamed"
 }
 
